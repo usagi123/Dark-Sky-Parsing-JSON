@@ -36,8 +36,7 @@ struct HourlyWeather {
     static let basePath = "https://api.darksky.net/forecast/"
     
     static func forecast (withKey key:String,withLocation location:String, completion: @escaping ([HourlyWeather]) -> ()) {
-        
-        let url = basePath + key + "/" + location + "?exclude=minutely,alerts,flags#"
+        let url = "\(basePath)\(key)/\(location)?exclude=minutely,alerts,flags#"
         let request = URLRequest(url: URL(string: url)!)
         
         let task = URLSession.shared.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in

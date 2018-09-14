@@ -18,38 +18,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        /*GET HOURLY WEATHER*/
+        /*GET HOURLY WEATHER*/
 //        HourlyWeather.forecast(withKey: forecastAPIKey, withLocation: "\(self.coordinate.lat),\(self.coordinate.long)") { (results:[HourlyWeather]) in
 //            print("HOURLY WEATHER")
 //            //access data
-//            //first way
 //            for result in results {
 //                print(SupportFunctions.unixToHumanTime(time: result.time))
 //                print(String(format: "%.0f", SupportFunctions.fahrenheitToCelsius(temperature: result.temperature)) + "˚C")
 //                print("\(result.icon)\n")
 //            }
-//
-//
 //        }
         
-//        /*GET DAILY WEATHER*/
-//        DailyWeather.forecast(withKey: forecastAPIKey, withLocation: "\(self.coordinate.lat),\(self.coordinate.long)") { (results:[DailyWeather]) in
-//            print("DAILY WEATHER")
-//            //access data
-//            //first way
-//            for result in results {
-//                print(SupportFunctions.unixToHumanTime(time: result.time))
-//                print(String(format: "%.0f", SupportFunctions.fahrenheitToCelsius(temperature: result.temperature)) + "˚C")
-//                print("\(result.icon)\n")
+        /*GET DAILY WEATHER*/
+        DailyWeather.forecast(withKey: forecastAPIKey, withLocation: "\(self.coordinate.lat),\(self.coordinate.long)") { (results:[DailyWeather]) in
+            print("DAILY WEATHER")
+            //access data
+            //first way
+            
+            for result in results {
+                print(SupportFunctions.unixToHumanTime(time: result.time))
+                print(String(format: "%.0f", SupportFunctions.fahrenheitToCelsius(temperature: result.temperature)) + "˚C")
+                print("\(result.icon)\n")
+            }
+            
+            //second way
+//            for i in 0..<results.count {
+//                print(results[i])
 //            }
-//            
-//            //second way
-////            for i in 0..<results.count {
-////                print(results[i])
-////            }
-//            
-////            let oneDayArray = results[0]
-//        }
+            
+//            let oneDayArray = results[0]
+        }
         
 //        /*GET CURRENT WEATHER*/
 //        self.forecastService = ForecastService(APIKey: self.forecastAPIKey)
@@ -62,19 +60,19 @@ class ViewController: UIViewController {
 //                    } else {
 //                        print("--")
 //                    }
-//                    
+//
 //                    if let time = currentWeather.time {
 //                        print(SupportFunctions.unixToHumanTime(time: time))
 //                    } else {
 //                        print("--")
 //                    }
-//                    
+//
 //                    if let humidity = currentWeather.humidity {
 //                        print(humidity)
 //                    } else {
 //                        print("--")
 //                    }
-//                    
+//
 //                    if let icon = currentWeather.icon {
 //                        print(icon)
 //                    } else {
